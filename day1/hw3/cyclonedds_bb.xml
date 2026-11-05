@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain Id="any">
+    <General>
+      <!-- 멀티캐스트 끔: 발견은 Peers 로만 -->
+      <AllowMulticast>false</AllowMulticast>
+    </General>
+    <Discovery>
+      <!-- 상대 주소를 직접 지정 (같은 PC) -->
+      <Peers>
+        <Peer address="127.0.0.1"/>
+      </Peers>
+      <!-- 참가자 번호를 0부터 자동 배정, 최대 7까지 -->
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>7</MaxAutoParticipantIndex>
+    </Discovery>
+    <Tracing>
+      <!-- config: 실제 적용된 설정과 선택된 인터페이스를 기록 -->
+      <Verbosity>config</Verbosity>
+      <OutputFile>/tmp/bb3_65f23094.log</OutputFile>
+    </Tracing>
+  </Domain>
+</CycloneDDS>
